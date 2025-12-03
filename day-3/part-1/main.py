@@ -33,13 +33,13 @@ def solve(line):
       largest_number_idx = line.index(char)
       largest_number = num
   
-  largest_number_positioned_after_the_other_largest_number = 0
+  next_largest_number = 0
   for idx in range(largest_number_idx + 1, len(line)):
     num = int(line[idx])
-    if num > largest_number_positioned_after_the_other_largest_number:
-      largest_number_positioned_after_the_other_largest_number = num
+    if num > next_largest_number:
+      next_largest_number = num
 
-  return int(f"{largest_number}{largest_number_positioned_after_the_other_largest_number}")
+  return int(f"{largest_number}{next_largest_number}")
 
 def parse_input(data):
   lines = data.strip().split('\n')
